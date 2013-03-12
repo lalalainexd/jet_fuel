@@ -1,0 +1,16 @@
+%form{action: "/create_url", method: "post"}
+  %input{type: "text", name: "original"}
+  %input{type: "submit", value: "Fuel it!"}
+
+
+%p
+  List of urls!
+- if @urls.nil?
+  %ul
+    - @urls.each do |url|
+      %li
+        %a{href: "#{url.original}"}= url.short
+- else
+  No urls
+
+
