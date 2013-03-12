@@ -9,16 +9,11 @@ module JetFuel
       haml :index
     end
 
-    post '/create_url' do
-      @url = UrlController.create params[:original]
-      haml :new_url
-    end
+  #  post '/create_url' do
+  #    @url = UrlController.create params[:original]
+  #    haml :new_url
+  #  end
 
-    get '/*' do
-      short = params[:splat]
-      url = UrlController.visit short
-      redirect url.original
-    end
 
   end
 end

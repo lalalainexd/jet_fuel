@@ -12,6 +12,8 @@ group :development do
   gem 'guard-rspec'
   gem 'rack'
   gem 'rack-test'
+  gem 'cucumber'
+  gem 'capybara'
 end
 
 # Specify your gem's dependencies in jet_fuel.gemspec
