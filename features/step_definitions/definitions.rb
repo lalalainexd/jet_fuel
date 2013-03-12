@@ -8,9 +8,11 @@ When(/^I visit the site$/) do
 end
 
 When(/^give a URL to the service$/) do
-  pending # express the regexp above with the code you wish you had
+  fill_in('originalUrl', :with => 'http://www.lalalainexd.com')
+  click_on('Fuel it!')
 end
 
 Then(/^I expect it to return a service shortened URL$/) do
-  pending # express the regexp above with the code you wish you had
+  short_url = Url.find_by_original('http://www.lalalainexd.com').short
+  page.has_content? short_url
 end

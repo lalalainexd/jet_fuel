@@ -9,10 +9,11 @@ module JetFuel
       haml :index
     end
 
-  #  post '/create_url' do
-  #    @url = UrlController.create params[:original]
-  #    haml :new_url
-  #  end
+    post '/create_url' do
+      response = UrlController.shorten params[:originalUrl]
+      @url = response.params[:short_url]
+      haml :new_url
+    end
 
 
   end
