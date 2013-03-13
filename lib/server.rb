@@ -11,8 +11,15 @@ module JetFuel
 
     post '/create_url' do
       response = UrlController.shorten params[:originalUrl]
-      @url = response.params[:short_url]
+      @url = response.short_url
       haml :new_url
+    end
+
+    get '/la/:short_url' do |short_url|
+      puts params.inspect
+      puts short_url
+      response = UrlController.visit short_url
+      redirect response.original_url
     end
 
 

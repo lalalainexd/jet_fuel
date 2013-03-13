@@ -1,11 +1,10 @@
 class Url < ActiveRecord::Base
-  validates :original, :short, presence: true
-  validates :short, uniqueness: true
+  validates :original, :short, presence: true, uniqueness: true
   after_initialize :init
 
   def init
     self.visits ||= 0
-    self.short = new_short_url
+    self.short ||= new_short_url
   end
 
   def new_short_url

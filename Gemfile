@@ -14,6 +14,7 @@ group :development do
   gem 'rack-test'
   gem 'cucumber'
   gem 'capybara'
+  gem 'rb-fsevent'
 end
 
 # Specify your gem's dependencies in jet_fuel.gemspec
