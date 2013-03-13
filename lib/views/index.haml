@@ -3,7 +3,7 @@
   %input{type: "submit", value: "Fuel it!"}
 
 
-- unless @visit_count_urls.empty?
+- unless @urls.empty?
   %table.urls
     %thead
       %tr
@@ -17,7 +17,7 @@
         %th{scope:"col"}
           Number of Visits
     %tbody
-    - @visit_count_urls.each do |url|
+    - @urls.each do |url|
       %tr
         %td= url.original
         %td= url.short
@@ -35,11 +35,11 @@
         %th{scope:"col"}
           Date
     %tbody
-    - @visit_count_urls.each do |url|
+    - @urls.each do |url|
       %tr
         %td= url.original
         %td= url.short
-        %td= url.created_at
+        %td= url.created_at.strftime("%B %d, %Y")
 
 - else
   No urls
