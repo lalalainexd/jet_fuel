@@ -2,9 +2,6 @@ require 'jet_fuel'
 require 'yaml'
 require 'haml'
 
-RACK_ENV = "test"
-
-set :environment, :test
 set :run, false
 set :raise_errors, true
 
@@ -20,4 +17,4 @@ RSpec.configure do |config|
 end
 
 db_config = YAML::load(File.open('config/database.yml'))
-ActiveRecord::Base.establish_connection db_config
+ActiveRecord::Base.establish_connection db_config[:test]

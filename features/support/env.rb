@@ -7,4 +7,5 @@ Capybara.app = JetFuel::Server
 Capybara.default_driver = :selenium
 
 db_config = YAML::load(File.open('config/database.yml'))
-ActiveRecord::Base.establish_connection db_config
+puts db_config.inspect
+ActiveRecord::Base.establish_connection db_config[:test]

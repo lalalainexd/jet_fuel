@@ -15,7 +15,7 @@ module JetFuel
       haml :new_url
     end
 
-    get '/la/:short_url' do |short_url|
+    get '/:short_url' do |short_url|
       puts params.inspect
       puts short_url
       response = UrlController.visit short_url
