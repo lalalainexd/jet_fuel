@@ -3,13 +3,44 @@
   %input{type: "submit", value: "Fuel it!"}
 
 
-%p
-  List of urls!
-- if @urls.nil?
-  %ul
-    - @urls.each do |url|
-      %li
-        %a{href: "#{url.original}"}= url.short
+- unless @visit_count_urls.empty?
+  %table.urls
+    %thead
+      %tr
+        %th{colspan:3}
+          Most Visited URLs
+      %tr
+        %th{scope:"col"}
+          Original Url
+        %th{scope:"col"}
+          Shortened Url
+        %th{scope:"col"}
+          Number of Visits
+    %tbody
+    - @visit_count_urls.each do |url|
+      %tr
+        %td= url.original
+        %td= url.short
+        %td= url.visits
+  %table.urls
+    %thead
+      %tr
+        %th{colspan:3}
+          URLs By Creation Date
+      %tr
+        %th{scope:"col"}
+          Original Url
+        %th{scope:"col"}
+          Shortened Url
+        %th{scope:"col"}
+          Date
+    %tbody
+    - @visit_count_urls.each do |url|
+      %tr
+        %td= url.original
+        %td= url.short
+        %td= url.created_at
+
 - else
   No urls
 

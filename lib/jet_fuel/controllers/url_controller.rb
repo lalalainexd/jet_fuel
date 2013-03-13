@@ -18,5 +18,12 @@ module JetFuel
       response.define_singleton_method(:original_url) {url.original}
       return response
     end
+
+    def self.all_sorted_by_visits
+      urls = Url.order("visits desc")
+      response = Response.new
+      response.define_singleton_method(:urls) {urls}
+      return response
+    end
   end
 end

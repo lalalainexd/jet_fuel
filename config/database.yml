@@ -1,6 +1,6 @@
-:test:
+test:
   :adapter: sqlite3
   :database: db/test-database.sqlite3
-:development:
+development:
   :adapter: sqlite3
   :database: db/dvelopment-database.sqlite3

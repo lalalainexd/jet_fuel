@@ -3,6 +3,23 @@ require 'spec_helper'
 module JetFuel
   describe UrlController do
 
+    it "returns a list of urls sorted most visits" do
+      response1 = described_class.shorten 'http://www.facebook.com'
+      response2 = described_class.shorten 'http://www.google.com'
+      response3 = described_class.shorten 'http://www.yahoo.com'
+
+      3.times { described_class.visit response3.short_url }
+      2.times { described_class.visit response2.short_url }
+      1.times { described_class.visit response1.short_url }
+
+      response = described_class.all_sorted_by_visits
+
+      expect(response.urls.size).to eq 3
+      expect(response.urls[0].short).to eq response3.short_url
+      expect(response.urls[1].short).to eq response2.short_url
+      expect(response.urls[2].short).to eq response1.short_url
+    end
+
     context "Given an anonymous user of the system" do
       let(:short_url) {"short_url"}
       let(:original_url) {"http://www.lalalainexd.com"}
@@ -69,6 +86,7 @@ module JetFuel
           end
         end
       end
+
     end
   end
 end
