@@ -1,2 +1,5 @@
-%p
-  %a{href: "/#{@url}"}="/#{@url}"
+%form{action: "/create_url", method: "post"}
+  %input{type: "text", name: "originalUrl"}
+  %input{type: "submit", value: "Fuel it!"}
+
+
