@@ -12,12 +12,31 @@ module JetFuel
       2.times { described_class.visit response2.short_url }
       1.times { described_class.visit response1.short_url }
 
-      response = described_class.all_sorted_by_visits
+      response = described_class.all_sorted_by_visits_and_dates
 
-      expect(response.urls.size).to eq 3
-      expect(response.urls[0].short).to eq response3.short_url
-      expect(response.urls[1].short).to eq response2.short_url
-      expect(response.urls[2].short).to eq response1.short_url
+      expect(response.urls_by_visit.size).to eq 3
+      expect(response.urls_by_visit[0].short).to eq response3.short_url
+      expect(response.urls_by_visit[1].short).to eq response2.short_url
+      expect(response.urls_by_visit[2].short).to eq response1.short_url
+    end
+
+    context "Given a logged in user" do
+      before do
+        RegistrationController.register "username", "password", "password"
+#        LoginController.login "username", "password"
+
+      end
+
+      let(:user) {
+        User.find_by_username "username"
+      }
+
+      it "creates a url for the user with the vanity string" do
+        pending
+       #user_url = described_class.shorten_with_vanity(user,
+        #                                       "http://www.google.com", "supdum").short_url
+        #expect(user_url).to eq "supdum"
+      end
     end
 
     context "Given an anonymous user of the system" do

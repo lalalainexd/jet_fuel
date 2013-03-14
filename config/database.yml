@@ -4,3 +4,4 @@ test:
 development:
   :adapter: sqlite3
   :database: db/dvelopment-database.sqlite3
+

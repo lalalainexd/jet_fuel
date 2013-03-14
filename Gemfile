@@ -5,6 +5,7 @@ gem 'thin'
 gem 'shotgun'
 gem 'sinatra-activerecord'
 gem 'haml'
+gem 'pg'
 
 group :development do
   gem 'sqlite3'
