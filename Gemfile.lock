@@ -1,0 +1,120 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (3.2.12)
+      activesupport (= 3.2.12)
+      builder (~> 3.0.0)
+    activerecord (3.2.12)
+      activemodel (= 3.2.12)
+      activesupport (= 3.2.12)
+      arel (~> 3.0.2)
+      tzinfo (~> 0.3.29)
+    activesupport (3.2.12)
+      i18n (~> 0.6)
+      multi_json (~> 1.0)
+    arel (3.0.2)
+    builder (3.0.4)
+    capybara (2.0.2)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (~> 2.0)
+      xpath (~> 1.0.0)
+    childprocess (0.3.9)
+      ffi (~> 1.0, >= 1.0.11)
+    coderay (1.0.9)
+    cucumber (1.2.2)
+      builder (>= 2.1.2)
+      diff-lcs (>= 1.1.3)
+      gherkin (~> 2.11.6)
+      multi_json (~> 1.3)
+    daemons (1.1.9)
+    diff-lcs (1.2.1)
+    eventmachine (1.0.1)
+    ffi (1.4.0)
+    gherkin (2.11.6)
+      json (>= 1.7.6)
+    guard (1.6.2)
+      listen (>= 0.6.0)
+      lumberjack (>= 1.0.2)
+      pry (>= 0.9.10)
+      terminal-table (>= 1.4.3)
+      thor (>= 0.14.6)
+    guard-rspec (2.5.0)
+      guard (>= 1.1)
+      rspec (~> 2.11)
+    haml (3.1.7)
+    i18n (0.6.4)
+    json (1.7.7)
+    listen (0.7.3)
+    lumberjack (1.0.2)
+    method_source (0.8.1)
+    mime-types (1.21)
+    multi_json (1.6.1)
+    nokogiri (1.5.6)
+    pry (0.9.12)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    rack (1.5.2)
+    rack-protection (1.4.0)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    rake (10.0.3)
+    rb-fsevent (0.9.3)
+    rspec (2.13.0)
+      rspec-core (~> 2.13.0)
+      rspec-expectations (~> 2.13.0)
+      rspec-mocks (~> 2.13.0)
+    rspec-core (2.13.0)
+    rspec-expectations (2.13.0)
+      diff-lcs (>= 1.1.3, < 2.0)
+    rspec-mocks (2.13.0)
+    rubyzip (0.9.9)
+    selenium-webdriver (2.31.0)
+      childprocess (>= 0.2.5)
+      multi_json (~> 1.0)
+      rubyzip
+      websocket (~> 1.0.4)
+    shotgun (0.9)
+      rack (>= 1.0)
+    sinatra (1.3.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.3)
+      tilt (~> 1.3, >= 1.3.3)
+    sinatra-activerecord (1.2.2)
+      activerecord (~> 3.0)
+      sinatra (~> 1.0)
+    slop (3.4.3)
+    sqlite3 (1.3.7)
+    terminal-table (1.4.5)
+    thin (1.5.0)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
+    thor (0.17.0)
+    tilt (1.3.5)
+    tzinfo (0.3.36)
+    websocket (1.0.7)
+    xpath (1.0.0)
+      nokogiri (~> 1.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  capybara
+  cucumber
+  guard-rspec
+  haml
+  rack
+  rack-test
+  rake
+  rb-fsevent
+  shotgun
+  sinatra
+  sinatra-activerecord
+  sqlite3
+  thin
